@@ -1,26 +1,35 @@
-<ion-view view-title="Pregnancy Categories" hide-back-button="true">
-  <ion-content class="padding">
-    <div class="list card">
-      <div class="item item-body">
-        <p>
-        <div class="list">
-          <label class="item item-input item-floating-label"><span class ="input-label">Name of the Medication</span><input type="text" placeholder="Enter name of the medication here">
-          </label>
-          <label class="item item-input item-select">
-            <div class="input-label">
-              Trimester
+<ion-view view-title="Momsmed" hide-back-button="true">
+    <ion-content class="padding">
+        <div class="list card">
+            <div class="item text-center">
+                <h2>Pregnancy Category</h2>
             </div>
-            <select>
-              <option>1st</option>
-              <option>2nd</option>
-              <option>3rd</option>
-            </select></label>
+            <div class="item item-body">
+
+                <div class="list">
+                    <label class="item item-input item-floating-label"><span class ="input-label">Name of the Medication</span><input type="text" ng-model="enteredMed" placeholder="Enter name of the medication here">
+                    </label>
+                    <label class="item item-input item-select">
+                        <div class="input-label">
+                            Trimester
+                        </div>
+                        <select>
+                            <option>1st</option>
+                            <option>2nd</option>
+                            <option>3rd</option>
+                        </select></label>
+                </div>
+                <a class="button button-full button-positive" ng-click="findMed(enteredMed)" > Submit </a>
+              <h3>Results</h3>
+              <ul>
+                <p class = "item"> Medication's Name: {{enteredMed}}</p>
+                <p class="item"> Pregnancy Category: {{myinfo.results[0].pregnancy[0][myinfo.results[0].pregnancy[0].indexOf('Category')+9]}} </p>
+              </ul>
+
+            </div>
+
+
+
         </div>
-        <button class="button button-small button-full button-royal">
-          Submit
-        </button>
-        </p>
-      </div>
-    </div>
-  </ion-content>
+    </ion-content>
 </ion-view>

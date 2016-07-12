@@ -1,22 +1,24 @@
-angular.module('App', ['ionic', 'ngCordova'])
+angular.module('Momsmed', ['ionic', 'ngCordova'])
+
 
 .config(function ($stateProvider, $urlRouterProvider) {
 
   $stateProvider
     .state('home', {
       url: '/home',
+      controller:"ResultCtrl",
       templateUrl: 'views/home/home.html'
     })
     .state('result', {
       url: '/result',
       templateUrl: 'views/result/result.html'
     })
-    .state('tour', {
-      url: '/tour',
-      templateUrl: 'views/tour/tour.html'
+    .state('start', {
+      url: '/start',
+      templateUrl: 'views/start/start.html'
     });
 
-  $urlRouterProvider.otherwise('/tour');
+  $urlRouterProvider.otherwise('/start');
 
 })
 

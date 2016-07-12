@@ -1,13 +1,11 @@
-<ion-view view-title="Result">
-    <ion-pane ng-controller="smsController">
-        <ion-header-bar class="bar-stable">
-            <h1 class="title">Result</h1>
-        </ion-header-bar>
+<ion-view view-title="Result" hide-back-button="true">
 
         <ion-content>
-            <ion-list>
-
-            </ion-list>
+            <h3>Results</h3>
+            <ul>
+                <p class = "item" > Medication's Name: {{enteredValue}}</p>
+                <p ng-repeat="info in myinfo | filter:'Pregnancy Category'  " class="item"> pregnancy category: {{info.results[0].pregnancy[0]}} </p>
+            </ul>
         </ion-content>
-    </ion-pane>
+
 </ion-view>
